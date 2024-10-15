@@ -10,7 +10,7 @@
 
 ---
 
-**CPU 관점에서 구분한 Instruction TYPE**
+**수행해야 할 동작으로 구분한 Instruction TYPE**
 
 |  Inst  | Task                                           |     State     | note                                                        |
 | :----: | :--------------------------------------------- | :-----------: | :---------------------------------------------------------- |
@@ -26,18 +26,18 @@
 
 <br>
 
-**ALU 관점에서 구분한 instruction type**
+**instruction 구조로 구분한 instruction type**
 
-| opcode  | inst type |                             instruction                              |                        alu operate                         | alu source |
-| :-----: | :-------: | :------------------------------------------------------------------: | :--------------------------------------------------------: | :--------: |
-| 0110111 |     -     |                                 LUI                                  |                          NO OPER                           | NO SOURCE  |
-| 0010111 |     -     |                                AUIPC                                 |                             +                              | PC, imm20  |
-| 1101111 |  J-type   |                                 JAL                                  |                             +                              | PC, imm20  |
-| 1100111 |  I-type   |                                 JALR                                 |                             +                              | rs1, imm12 |
-| 1100011 |  B-type   |               BEQ<br>BNE<br>BLT<br>BGE<br>BLTU<br>BGEU               |                             -                              |  rs1, rs2  |
-| 0000011 |  I-type   |                     LB<br>LH<br>LW<br>LBU<br>LHU                     |                             +                              | rs1, imm12 |
-| 0100011 |  S-type   |                            SB<br>SH<br>SW                            |                             +                              | rs1, imm12 |
-| 0010011 |  I-type   | ADDI<br>SLTI<br>SLTIU<br>XORI<br>ORI<br>ANDI<br>SLLI<br>SRLI<br>SRAI |  +<br>-<br>-<br>^<br> \| <br> & <br> << <br> >> <br> >>>   | rs1, imm12 |
-| 0110011 |  R-type   |  ADD<br>SUB<br>SLL<br>SLT<br>SLTU<br>XOR<br>SRL<br>SRA<br>OR<br>AND  | +<br>-<br> << <br>-<br>-<br>^<br> >> <br> >>> <br>\| <br>& |  rs1, rs2  |
+| opcode  | inst type |                             instruction                              |                        alu operate                         |         alu source          |
+| :-----: | :-------: | :------------------------------------------------------------------: | :--------------------------------------------------------: | :-------------------------: |
+| 0110111 |     -     |                                 LUI                                  |                          NO OPER                           |          NO SOURCE          |
+| 0010111 |     -     |                                AUIPC                                 |                             +                              |          PC, imm20          |
+| 1101111 |  J-type   |                                 JAL                                  |                             +                              |          PC, imm20          |
+| 1100111 |  I-type   |                                 JALR                                 |                             +                              |         rs1, imm12          |
+| 1100011 |  B-type   |               BEQ<br>BNE<br>BLT<br>BGE<br>BLTU<br>BGEU               |                             -                              | 1. rs1, rs2<br>2. PC, imm12 |
+| 0000011 |  I-type   |                     LB<br>LH<br>LW<br>LBU<br>LHU                     |                             +                              |         rs1, imm12          |
+| 0100011 |  S-type   |                            SB<br>SH<br>SW                            |                             +                              |         rs1, imm12          |
+| 0010011 |  I-type   | ADDI<br>SLTI<br>SLTIU<br>XORI<br>ORI<br>ANDI<br>SLLI<br>SRLI<br>SRAI |  +<br>-<br>-<br>^<br> \| <br> & <br> << <br> >> <br> >>>   |         rs1, imm12          |
+| 0110011 |  R-type   |  ADD<br>SUB<br>SLL<br>SLT<br>SLTU<br>XOR<br>SRL<br>SRA<br>OR<br>AND  | +<br>-<br> << <br>-<br>-<br>^<br> >> <br> >>> <br>\| <br>& |          rs1, rs2           |
 
 > alu_op : +, -, <<, ^, >>, >>>, |, & &rarr; 8개 = 3bit
