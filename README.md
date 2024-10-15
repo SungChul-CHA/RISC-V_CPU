@@ -41,3 +41,9 @@
 | 0110011 |  R-type   |  ADD<br>SUB<br>SLL<br>SLT<br>SLTU<br>XOR<br>SRL<br>SRA<br>OR<br>AND  | +<br>-<br> << <br>-<br>-<br>^<br> >> <br> >>> <br>\| <br>& |          rs1, rs2           |
 
 > alu_op : +, -, <<, ^, >>, >>>, |, & &rarr; 8개 = 3bit
+
+---
+
+![simple_diagram](./src/diagram.png)
+
+> MUX, DEMUX 빠진 그림
