@@ -28,6 +28,8 @@ module alu(
     );
     `include "alu_op.vh"
 
+    wire [32:0] c;
+    
     always @(*) begin
         case(alu_op)
             ADD: result = src_1 + src_2;
@@ -41,5 +43,10 @@ module alu(
             default: result = 32'b0;
         endcase
     end    
+
+    assign N = result[31];
+    assign Z = (result == 32'b0);
+    assign C = 0;
+    assign V = c[32] ^ c[31];
     
 endmodule
