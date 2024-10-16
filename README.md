@@ -51,3 +51,13 @@
 ![simple_diagram](./src/diagram.png)
 
 > MUX, DEMUX 빠진 그림
+
+<br>
+
+|        <b>FSM 구조</b>        |
+| :---------------------------: |
+| ![fsm_diagram](./src/fsm.png) |
+
+> FETCH : PC Update, Instruction Read
+> DECODE : Datapath Configure(imm, alu src, alu out, rd, rs1, rs2, pc_next, ...)
+> BTYPE : branch condition check
