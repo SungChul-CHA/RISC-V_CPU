@@ -1,1 +1,1 @@
-rm -rf vivado* *.pb xsim.dir
+rm -rf vivado* *.pb xsim.dir *.tmp

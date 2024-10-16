@@ -60,4 +60,8 @@
 
 > FETCH : PC Update, Instruction Read
 > DECODE : Datapath Configure(imm, alu src, alu out, rd, rs1, rs2, pc_next, ...)
-> BTYPE : branch condition check
+> BTYPE : branch condition check, Calculate Next PC / Go to Fetch
+> EXEI : Calculate, Write Back / Use the result as Memory Addr
+> EXER : Calculate
+> MEM : R/W from/to Mem (DECODE State choose)
+> WB : Store to Register Files
