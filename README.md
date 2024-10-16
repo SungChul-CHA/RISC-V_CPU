@@ -58,10 +58,10 @@
 | :---------------------------: |
 | ![fsm_diagram](./src/fsm.png) |
 
-> FETCH : PC Update, Instruction Read
-> DECODE : Datapath Configure(imm, alu src, alu out, rd, rs1, rs2, pc_next, ...)
-> BTYPE : branch condition check, Calculate Next PC / Go to Fetch
-> EXEI : Calculate, Write Back / Use the result as Memory Addr
-> EXER : Calculate
-> MEM : R/W from/to Mem (DECODE State choose)
+> FETCH : PC Update, Instruction Read<br>
+> DECODE : Datapath Configure(imm, alu src, alu out, rd, rs1, rs2, pc_next, ...)<br>
+> BTYPE : branch condition check, Calculate Next PC / Go to Fetch<br>
+> EXEI : Calculate, Write Back / Use the result as Memory Addr<br>
+> EXER : Calculate<br>
+> MEM : R/W from/to Mem (DECODE State choose)<br>
 > WB : Store to Register Files
