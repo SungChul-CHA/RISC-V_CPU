@@ -12,17 +12,21 @@
 
 **수행해야 할 동작으로 구분한 Instruction TYPE**
 
-|  Inst  | Task                                           |     State     | note                                                        |
-| :----: | :--------------------------------------------- | :-----------: | :---------------------------------------------------------- |
-|  LUI   | rd = {imm20, 12'b0}                            |      WB       | U-TYPE                                                      |
-| AUIPC  | rd = PC + {imm20, 12'b0}                       |   EXEI, WB    | U-TYPE                                                      |
-|  JAL   | PC = PC + {imm20, 1'b0}<br>rd = PC + 4         |     JTYPE     | PC + 4 로직이 이미 있으므로,<br>U-TYPE과는 다르게 동작 가능 |
-|  JALR  | PC = (rs1 + imm12) & {31'b1, 0}<br>rd = PC + 4 |     JTYPE     | PC + 4 로직이 이미 있으므로,<br>U-TYPE과는 다르게 동작 가능 |
-| Branch | alu : rs1 - rs2<br>PC = PC + {imm12, 1'b0}     |     BTYPE     | alu 2번 써야함.<br> PC 값 update mux에 추가                 |
-|  LOAD  | alu : rs1 + imm12<br>rd = \*alu_out            | EXEI, MEM, WB | Memory Read Timing 주의                                     |
-| STORE  | alu : rs1 + imm12<br>\*alu_out = rs2           |   EXEI, MEM   | S-TYPE                                                      |
-| I-TYPE | rd = rs1 + imm12                               |   EXEI, WB    | I-TYPE                                                      |
-| R-TYPE | rd = rs1 + rs2                                 |   EXER, WB    | R-TYPE                                                      |
+|  Inst  | Task                                           |     State     | note                                        |
+| :----: | :--------------------------------------------- | :-----------: | :------------------------------------------ |
+|  LUI   | rd = {imm20, 12'b0}                            |      WB       | U-TYPE                                      |
+| AUIPC  | rd = PC + {imm20, 12'b0}                       |   EXEI, WB    | U-TYPE                                      |
+|  JAL   | PC = PC + {imm20, 1'b0}<br>rd = PC + 4         |   EXEI, WB    | J-TYPE                                      |
+|  JALR  | PC = (rs1 + imm12) & {31'b1, 0}<br>rd = PC + 4 |   EXIE, WB    | J-TYPE                                      |
+| Branch | alu : rs1 - rs2<br>PC = PC + {imm12, 1'b0}     |  BTYPE, EXEI  | alu 2번 써야함.<br> PC 값 update mux에 추가 |
+|  LOAD  | alu : rs1 + imm12<br>rd = \*alu_out            | EXEI, MEM, WB | Memory Read Timing 주의                     |
+| STORE  | alu : rs1 + imm12<br>\*alu_out = rs2           |   EXEI, MEM   | S-TYPE                                      |
+| I-TYPE | rd = rs1 + imm12                               |   EXEI, WB    | I-TYPE                                      |
+| R-TYPE | rd = rs1 + rs2                                 |   EXER, WB    | R-TYPE                                      |
+
+> State : FETCH, DECODE, EXEI, EXER, B_TYPE, MEM, WB &rarr; 7개<br>
+> 9개 : MEM &rarr; MEM_R, MEM_W + J_TYPE<br>
+> 11개 : WB &rarr; MEM_WB, ALU_WB + EXE_MEM_ADDR
 
 <br>
 
