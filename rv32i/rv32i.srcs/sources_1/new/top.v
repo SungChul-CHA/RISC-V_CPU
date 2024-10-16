@@ -29,7 +29,7 @@ module top(
     output [31:0] read_data_mem, inst
     );
     
-//    rv32i_cpu iCPU ();
+    rv32i_cpu iCPU (clk, );
     
     tdpram_4096x32 iMEM (
         .clka (clk), 

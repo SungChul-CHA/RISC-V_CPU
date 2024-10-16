@@ -17,14 +17,14 @@
 |  LUI   | rd = {imm20, 12'b0}                            |      WB       | U-TYPE                                      |
 | AUIPC  | rd = PC + {imm20, 12'b0}                       |   EXEI, WB    | U-TYPE                                      |
 |  JAL   | PC = PC + {imm20, 1'b0}<br>rd = PC + 4         |   EXEI, WB    | J-TYPE                                      |
-|  JALR  | PC = (rs1 + imm12) & {31'b1, 0}<br>rd = PC + 4 |   EXIE, WB    | J-TYPE                                      |
+|  JALR  | PC = (rs1 + imm12) & {31'b1, 0}<br>rd = PC + 4 |   EXEI, WB    | J-TYPE                                      |
 | Branch | alu : rs1 - rs2<br>PC = PC + {imm12, 1'b0}     |  BTYPE, EXEI  | alu 2번 써야함.<br> PC 값 update mux에 추가 |
 |  LOAD  | alu : rs1 + imm12<br>rd = \*alu_out            | EXEI, MEM, WB | Memory Read Timing 주의                     |
 | STORE  | alu : rs1 + imm12<br>\*alu_out = rs2           |   EXEI, MEM   | S-TYPE                                      |
 | I-TYPE | rd = rs1 + imm12                               |   EXEI, WB    | I-TYPE                                      |
 | R-TYPE | rd = rs1 + rs2                                 |   EXER, WB    | R-TYPE                                      |
 
-> State : FETCH, DECODE, EXEI, EXER, B_TYPE, MEM, WB &rarr; 7개<br>
+> State : FETCH, DECODE, EXEI, EXER, BTYPE, MEM, WB &rarr; 7개<br>
 > 9개 : MEM &rarr; MEM_R, MEM_W + J_TYPE<br>
 > 11개 : WB &rarr; MEM_WB, ALU_WB + EXE_MEM_ADDR
 
@@ -32,17 +32,17 @@
 
 **instruction 구조로 구분한 instruction type**
 
-| opcode  | inst type |                             instruction                              |                        alu operate                         |         alu source          |
-| :-----: | :-------: | :------------------------------------------------------------------: | :--------------------------------------------------------: | :-------------------------: |
-| 0110111 |     -     |                                 LUI                                  |                          NO OPER                           |          NO SOURCE          |
-| 0010111 |     -     |                                AUIPC                                 |                             +                              |          PC, imm20          |
-| 1101111 |  J-type   |                                 JAL                                  |                             +                              |          PC, imm20          |
-| 1100111 |  I-type   |                                 JALR                                 |                             +                              |         rs1, imm12          |
-| 1100011 |  B-type   |               BEQ<br>BNE<br>BLT<br>BGE<br>BLTU<br>BGEU               |                             -                              | 1. rs1, rs2<br>2. PC, imm12 |
-| 0000011 |  I-type   |                     LB<br>LH<br>LW<br>LBU<br>LHU                     |                             +                              |         rs1, imm12          |
-| 0100011 |  S-type   |                            SB<br>SH<br>SW                            |                             +                              |         rs1, imm12          |
-| 0010011 |  I-type   | ADDI<br>SLTI<br>SLTIU<br>XORI<br>ORI<br>ANDI<br>SLLI<br>SRLI<br>SRAI |  +<br>-<br>-<br>^<br> \| <br> & <br> << <br> >> <br> >>>   |         rs1, imm12          |
-| 0110011 |  R-type   |  ADD<br>SUB<br>SLL<br>SLT<br>SLTU<br>XOR<br>SRL<br>SRA<br>OR<br>AND  | +<br>-<br> << <br>-<br>-<br>^<br> >> <br> >>> <br>\| <br>& |          rs1, rs2           |
+|  opcode   | inst type |                             instruction                              |                        alu operate                         |         alu source          |
+| :-------: | :-------: | :------------------------------------------------------------------: | :--------------------------------------------------------: | :-------------------------: |
+| 01_101_11 |  U-type   |                                 LUI                                  |                          NO OPER                           |          NO SOURCE          |
+| 00_101_11 |  U-type   |                                AUIPC                                 |                             +                              |          PC, imm20          |
+| 11_011_11 |  J-type   |                                 JAL                                  |                             +                              |          PC, imm20          |
+| 11_001_11 |  I-type   |                                 JALR                                 |                             +                              |         rs1, imm12          |
+| 11_000_11 |  B-type   |               BEQ<br>BNE<br>BLT<br>BGE<br>BLTU<br>BGEU               |                             -                              | 1. rs1, rs2<br>2. PC, imm12 |
+| 00_000_11 |  I-type   |                     LB<br>LH<br>LW<br>LBU<br>LHU                     |                             +                              |         rs1, imm12          |
+| 01_000_11 |  S-type   |                            SB<br>SH<br>SW                            |                             +                              |         rs1, imm12          |
+| 00_100_11 |  I-type   | ADDI<br>SLTI<br>SLTIU<br>XORI<br>ORI<br>ANDI<br>SLLI<br>SRLI<br>SRAI |  +<br>-<br>-<br>^<br> \| <br> & <br> << <br> >> <br> >>>   |         rs1, imm12          |
+| 01_100_11 |  R-type   |  ADD<br>SUB<br>SLL<br>SLT<br>SLTU<br>XOR<br>SRL<br>SRA<br>OR<br>AND  | +<br>-<br> << <br>-<br>-<br>^<br> >> <br> >>> <br>\| <br>& |          rs1, rs2           |
 
 > alu_op : +, -, <<, ^, >>, >>>, |, & &rarr; 8개 = 3bit
 
