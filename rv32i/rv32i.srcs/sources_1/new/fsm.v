@@ -32,7 +32,7 @@ module fsm(
     input wire clk, async_reset_n,
     input wire [6:0] i_op_code,
     output reg o_unknown_inst,
-    output reg [3:0] o_c_state
+    output reg [2:0] o_c_state
     );
 
     // local parameters
@@ -45,7 +45,7 @@ module fsm(
     localparam S_WB     = 3'b110;
     localparam S_ERR    = 3'b111; 
 
-    reg [3:0] n_state;
+    reg [2:0] n_state;
 
     always @ (posedge clk or negedge async_reset_n) begin
         if (!async_reset_n) begin
@@ -56,13 +56,12 @@ module fsm(
     end
 
     always @ (*) begin
+        o_unknown_inst = 1'b0;
         case (o_c_state)
             S_FETCH: begin
-                o_unknown_inst = 1'b0;
                 n_state = S_DECODE;
             end
             S_DECODE: begin
-                o_unknown_inst = 1'b0;
                 case(i_op_code)
                     `OP_LUI: begin
                         n_state = S_WB;
@@ -97,7 +96,6 @@ module fsm(
                 endcase
             end
             S_EXEI: begin
-                o_unknown_inst = 1'b0;
                 case (i_op_code)
                     `OP_LOAD: begin
                         n_state = S_MEM;
@@ -109,20 +107,16 @@ module fsm(
                 endcase
             end
             S_EXER: begin
-                o_unknown_inst = 1'b0;
                 n_state = S_WB;
             end
             S_BTYPE: begin
-                o_unknown_inst = 1'b0;
                 n_state = S_EXEI;
             end
             S_MEM: begin
-                o_unknown_inst = 1'b0;
                 if (i_op_code == `OP_LOAD) n_state = S_WB;
                 else n_state = S_FETCH;
             end
             S_WB: begin
-                o_unknown_inst = 1'b0;
                 n_state = S_FETCH;
             end
             S_ERR: begin

@@ -1,8 +1,8 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../rv32i.srcs/sources_1/new" \
-"../../../../rv32i.gen/sources_1/ip/tdpram_4096x32/sim/tdpram_4096x32.v" \
-"../../../../rv32i.srcs/sources_1/new/top.v" \
-"../../../../rv32i.srcs/sim_1/new/tb_top.v" \
+"../../../../rv32i.srcs/sources_1/new/fsm.v" \
+"../../../../rv32i.srcs/sources_1/new/ir_decoder.v" \
+"../../../../rv32i.srcs/sim_1/new/tb_case.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

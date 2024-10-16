@@ -44,7 +44,7 @@ module ir_decoder(
         o_rs2 = 'd0;
         o_funct7 = 'd0;
         o_imm = 'd0;
-        case (i_inst[6:0])
+        case (i_inst[4:2])
             `R_TYPE: begin
                 o_op_code = i_inst[6:0];
                 o_rd      = i_inst[11:7];
