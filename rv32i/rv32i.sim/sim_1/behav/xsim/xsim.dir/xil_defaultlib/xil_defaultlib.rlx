@@ -4,5 +4,5 @@ Feb 21 2023
 20:06:57
 /home/tony/Desktop/riscv/rv32i/rv32i.gen/sources_1/ip/tdpram_4096x32/sim/tdpram_4096x32.v,1728965413,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/top.v,,tdpram_4096x32,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
-/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_top.v,1729049415,verilog,,,,dff;tb_top,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_top.v,1729061365,verilog,,,,dff;regfile;tb_top,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/top.v,1729039684,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_top.v,,top,,,../../../../rv32i.srcs/sources_1/new,,,,,

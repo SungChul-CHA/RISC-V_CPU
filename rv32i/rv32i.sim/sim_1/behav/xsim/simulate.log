@@ -1,5 +1,6 @@
 Time resolution is 1 ps
-Block Memory Generator module tb_top.dut.iMEM.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
-blk_mem_gen_v8_4_5 collision detected at time: 15000, Instance: tb_top.dut.iMEM.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A ra`d address: 0, B write address: 0
-blk_mem_gen_v8_4_5 collision detected at time: 25000, Instance: tb_top.dut.iMEM.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A ra`d address: 0, B write address: 0
-blk_mem_gen_v8_4_5 collision detected at time: 35000, Instance: tb_top.dut.iMEM.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A ra`d address: 0, B write address: 0
+Block Memory Generator module tb_top.bram.iMEM.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+blk_mem_gen_v8_4_5 collision detected at time: 15000, Instance: tb_top.bram.iMEM.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A ra`d address: 0, B write address: 0
+blk_mem_gen_v8_4_5 collision detected at time: 25000, Instance: tb_top.bram.iMEM.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A ra`d address: 0, B write address: 0
+blk_mem_gen_v8_4_5 collision detected at time: 35000, Instance: tb_top.bram.iMEM.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A ra`d address: 0, B write address: 0
+$finish called at time : 5025 ns : File "/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_top.v" Line 72

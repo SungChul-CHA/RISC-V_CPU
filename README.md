@@ -65,3 +65,9 @@
 > EXER : Calculate<br>
 > MEM : R/W from/to Mem (DECODE State choose)<br>
 > WB : Store to Register Files
+
+<br>
+
+![cpu_waveform](./src/waveform.png)
+
+> 자세한 타이밍은 맞지 않을 수 있음.
