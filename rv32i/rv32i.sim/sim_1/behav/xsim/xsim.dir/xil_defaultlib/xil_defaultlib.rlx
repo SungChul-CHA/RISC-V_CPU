@@ -2,11 +2,14 @@
 2020.2
 Feb 21 2023
 20:06:57
-/home/tony/Desktop/riscv/rv32i/rv32i.gen/sources_1/ip/tdpram_4096x32/sim/tdpram_4096x32.v,1729132377,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v,,tdpram_4096x32,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.gen/sources_1/ip/tdpram_4096x32/sim/tdpram_4096x32.v,1729132377,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/PC.v,,tdpram_4096x32,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_fsm.v,1729135163,verilog,,,,tb_fsm,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_pc.v,1729148328,verilog,,,,tb_pc,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_tdpbram.v,1729133874,verilog,,,,dff;tb_tdpbram,,,../../../../rv32i.srcs/sources_1/new,,,,,
-/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v,1729088760,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/ir_decoder.v,,fsm,,,../../../../rv32i.srcs/sources_1/new,,,,,
-/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/ir_decoder.v,1729088334,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_fsm.v,,ir_decoder,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/PC.v,1729148295,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v,,PC,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v,1729136993,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/ir_decoder.v,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/state.vh,fsm,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/ir_decoder.v,1729088334,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_pc.v,,ir_decoder,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/regfile.v,1728970881,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_tdpbram.v,,regfile,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/state.vh,1729136984,verilog,,,,,,,,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/top.v,1729039684,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_top.v,,top,,,../../../../rv32i.srcs/sources_1/new,,,,,

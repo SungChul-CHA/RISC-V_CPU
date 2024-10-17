@@ -27,13 +27,14 @@
 `define J_TYPE  3'b011
 
 module ir_decoder(
-    input wire [31:0] i_inst,
-    output reg [6:0]  o_op_code,
-    output reg [4:0]  o_rd,
-    output reg [2:0]  o_funct3,
-    output reg [4:0]  o_rs1, o_rs2,
-    output reg [6:0]  o_funct7,
-    output reg [31:0] o_imm
+    input  wire [31:0] i_inst,
+    
+    output reg  [6:0]  o_op_code,
+    output reg  [4:0]  o_rd,
+    output reg  [2:0]  o_funct3,
+    output reg  [4:0]  o_rs1, o_rs2,
+    output reg  [6:0]  o_funct7,
+    output reg  [31:0] o_imm
     );
 
     always @ (*) begin

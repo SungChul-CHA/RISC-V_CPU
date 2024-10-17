@@ -18,32 +18,16 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-`define OP_LUI      7'b0110111
-`define OP_AUIPC    7'b0110111
-`define OP_JAL      7'b1101111
-`define OP_JALR     7'b1100111
-`define OP_BRANCH   7'b1100011
-`define OP_LOAD     7'b0000011
-`define OP_STORE    7'b0100011
-`define OP_I        7'b0010011
-`define OP_R        7'b0110011
+`include "instruction.vh"
 
 module fsm(
-    input wire clk, async_reset_n,
+    input wire clk, async_reset_n, i_btaken,
     input wire [6:0] i_op_code,
     output reg o_unknown_inst,
     output reg [2:0] o_c_state
     );
 
-    // local parameters
-    localparam S_FETCH  = 3'b000;
-    localparam S_DECODE = 3'b001;
-    localparam S_EXEI   = 3'b010;
-    localparam S_EXER   = 3'b011;
-    localparam S_BTYPE  = 3'b100;
-    localparam S_MEM    = 3'b101;
-    localparam S_WB     = 3'b110;
-    localparam S_ERR    = 3'b111; 
+    `include "state.vh" 
 
     reg [2:0] n_state;
 
@@ -110,7 +94,8 @@ module fsm(
                 n_state = S_WB;
             end
             S_BTYPE: begin
-                n_state = S_EXEI;
+                if (i_btaken) n_state = S_EXEI;
+                else n_state = S_FETCH;
             end
             S_MEM: begin
                 if (i_op_code == `OP_LOAD) n_state = S_WB;
