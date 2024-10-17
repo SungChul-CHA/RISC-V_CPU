@@ -71,3 +71,18 @@
 ![cpu_waveform](./src/waveform.png)
 
 > 자세한 타이밍은 맞지 않을 수 있음.
+
+---
+
+|           <b>FSM Waveform</b>           |
+| :-------------------------------------: |
+| ![fsm waveform](./src/fsm_waveform.png) |
+
+> 0 : Fetch<br>
+> 1 : Decode<br>
+> 2 : EXE I-type<br>
+> 3 : EXE R-type<br>
+> 4 : B-type<br>
+> 5 : Memory Access<br>
+> 6 : Write Back<br>
+> 7 : Error<br>

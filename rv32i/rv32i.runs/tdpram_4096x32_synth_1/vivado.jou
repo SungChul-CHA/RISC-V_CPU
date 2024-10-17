@@ -2,8 +2,8 @@
 # Vivado v2022.2.2 (64-bit)
 # SW Build 3788238 on Tue Feb 21 19:59:23 MST 2023
 # IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-# Start of session at: Tue Oct 15 13:10:15 2024
-# Process ID: 86597
+# Start of session at: Thu Oct 17 11:32:59 2024
+# Process ID: 11668
 # Current directory: /home/tony/Desktop/riscv/rv32i/rv32i.runs/tdpram_4096x32_synth_1
 # Command line: vivado -log tdpram_4096x32.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tdpram_4096x32.tcl
 # Log file: /home/tony/Desktop/riscv/rv32i/rv32i.runs/tdpram_4096x32_synth_1/tdpram_4096x32.vds

@@ -3,71 +3,80 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_case_behav.wdb" id="1">
+      <db_ref path="tb_fsm_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="tb_case" />
+            <top_module name="tb_fsm" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="85.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="214.401 ns"></ZoomEndTime>
-      <Cursor1Time time="16.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="440.001 ns"></ZoomEndTime>
+      <Cursor1Time time="400.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="204"></NameColumnWidth>
       <ValueColumnWidth column_width="71"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
-   <wvobject type="logic" fp_name="/tb_case/clk">
+   <WVObjectSize size="14" />
+   <wvobject type="array" fp_name="/tb_fsm/i">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_fsm/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_case/async_reset_n">
+   <wvobject type="logic" fp_name="/tb_fsm/async_reset_n">
       <obj_property name="ElementShortName">async_reset_n</obj_property>
       <obj_property name="ObjectShortName">async_reset_n</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_case/inst">
+   <wvobject type="array" fp_name="/tb_fsm/pc">
+      <obj_property name="ElementShortName">pc[11:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_fsm/inst">
       <obj_property name="ElementShortName">inst[31:0]</obj_property>
       <obj_property name="ObjectShortName">inst[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_case/imm">
+   <wvobject type="array" fp_name="/tb_fsm/imm">
       <obj_property name="ElementShortName">imm[31:0]</obj_property>
       <obj_property name="ObjectShortName">imm[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_case/funct7">
+   <wvobject type="array" fp_name="/tb_fsm/funct7">
       <obj_property name="ElementShortName">funct7[6:0]</obj_property>
       <obj_property name="ObjectShortName">funct7[6:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_case/rs1">
+   <wvobject type="array" fp_name="/tb_fsm/rs1">
       <obj_property name="ElementShortName">rs1[4:0]</obj_property>
       <obj_property name="ObjectShortName">rs1[4:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_case/rs2">
+   <wvobject type="array" fp_name="/tb_fsm/rs2">
       <obj_property name="ElementShortName">rs2[4:0]</obj_property>
       <obj_property name="ObjectShortName">rs2[4:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_case/funct3">
+   <wvobject type="array" fp_name="/tb_fsm/funct3">
       <obj_property name="ElementShortName">funct3[2:0]</obj_property>
       <obj_property name="ObjectShortName">funct3[2:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_case/rd">
+   <wvobject type="array" fp_name="/tb_fsm/rd">
       <obj_property name="ElementShortName">rd[4:0]</obj_property>
       <obj_property name="ObjectShortName">rd[4:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_case/op_code">
+   <wvobject type="array" fp_name="/tb_fsm/op_code">
       <obj_property name="ElementShortName">op_code[6:0]</obj_property>
       <obj_property name="ObjectShortName">op_code[6:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_case/unknown_inst">
+   <wvobject type="logic" fp_name="/tb_fsm/unknown_inst">
       <obj_property name="ElementShortName">unknown_inst</obj_property>
       <obj_property name="ObjectShortName">unknown_inst</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_case/c_state">
+   <wvobject type="array" fp_name="/tb_fsm/c_state">
       <obj_property name="ElementShortName">c_state[2:0]</obj_property>
       <obj_property name="ObjectShortName">c_state[2:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

@@ -37,37 +37,40 @@ module tb_tdpbram;
     
     initial begin
     clk = 1'b0;
-    cs_mem = 1'b1;
+    cs_mem = 1'b0;
     data_we = 4'b0;
     pc = 12'd0;
     addrb = 12'd0;
     write_data = 'h0;
     reset_n = 1'b1;
-    #13
+    #3
     
     reset_n = 1'b0;
-    data_we = 4'b1;
     #5
     reset_n = 1'b1;
     
-    for (i = 0; i < 1000; i = i + 4) begin  // data write
-        @(posedge clk)
-        addrb <= i;
-        write_data <= 20 * i;
-    end
-    
     #5
-    data_we = 4'b0;
-    for (i = 0; i < 500; i = i + 4) begin   // data read
+    for (i = 0; i < 40; i = i + 4) begin   // inst read
         @(posedge clk)
         pc <= i;
     end
     
-    #5
-    for (i = 500; i < 1000; i = i + 4) begin    // data read
+    #20
+    data_we = 4'b1;
+    cs_mem = 1'b1;
+    for (i = 40; i < 80; i = i + 4) begin   // write data
         @(posedge clk)
         addrb <= i;
+        write_data <= i;
     end
+    
+    #20
+    data_we = 4'b0;
+    for (i = 40; i < 80; i = i + 4) begin   // data read
+        @(posedge clk)
+        addrb <= i;
+    end    
+    
     
     #10 $finish;
     end
