@@ -63,10 +63,10 @@ module tb_controller;
     fsm fsm (clk, reset_n, is_branch, op_code, unknown_inst, c_state);
     
     // DUT
-    wire pc_is_alu, alu_a_is_pc, alu_b_is_imm;
-    wire [1:0] rd_source;
+    wire pc_is_alu, alu_a_is_pc, alu_b_is_imm, regfile_we;
+    wire [1:0] rd_source, is_mem;
     wire [3:0] alu_op;
-    controller DUT (c_state, op_code, funct3, funct7, is_branch, pc_is_alu, alu_op, alu_a_is_pc, alu_b_is_imm, rd_source);
+    controller DUT (c_state, op_code, funct3, funct7, is_branch, pc_is_alu, alu_op, alu_a_is_pc, alu_b_is_imm, regfile_we, rd_source, is_mem);
     
     always begin
         #5 clk = ~clk;

@@ -16,11 +16,11 @@ int mult(int a, int b) {
 
 int main() {
  int i, j;
- int result[20];
+ int result[3][3];
 
- for (i = 1; i < 20; i++) {
-  for (j = 1; j < 20; j++) {
-   result[i-1] = mult(i, j);
+ for (i = 1; i < 3 +1; i++) {
+  for (j = 1; j < 3 +1; j++) {
+   result[i][j] = mult(i, j);
   }
  }
 

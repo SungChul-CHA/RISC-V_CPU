@@ -1,4 +1,4 @@
-#define	MAX_CNT	20
+#define	MAX_CNT	3
 
 int mult(int a, int b) {
 	int result, i;
@@ -12,11 +12,11 @@ int mult(int a, int b) {
 
 int main() {
 	int i, j;
-	int result[MAX_CNT];
+	int result[MAX_CNT][MAX_CNT];
 	
-	for (i = 1; i < MAX_CNT; i++) {
-		for (j = 1; j < MAX_CNT; j++) {
-			result[i-1] = mult(i, j);
+	for (i = 1; i < MAX_CNT+1; i++) {
+		for (j = 1; j < MAX_CNT+1; j++) {
+			result[i][j] = mult(i, j);
 		}
 	}
 

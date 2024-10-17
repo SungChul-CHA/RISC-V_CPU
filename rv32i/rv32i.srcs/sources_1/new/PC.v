@@ -31,13 +31,13 @@ module PC(
     reg [11:0] pc_next, pc_next_reg;
 
     always @ (*) begin
-        if (i_is_alu) pc_next = i_alu_out;
+        if (i_is_alu) pc_next = i_alu_out & {31'b1, 1'b0};
         else pc_next = o_pc + 4;
     end
 
     always @ (posedge clk or negedge async_reset_n) begin
         if (!async_reset_n) pc_next_reg <= 0;
-        else if (c_state == 3'b001) pc_next_reg <= pc_next;
+        else if (c_state != 3'b000) pc_next_reg <= pc_next;
     end
 
     assign o_pc = (c_state == 3'b0) ? pc_next_reg : o_pc;

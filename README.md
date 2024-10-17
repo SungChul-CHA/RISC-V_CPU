@@ -107,8 +107,7 @@
 > > 4 : B-type<br>
 > > 5 : Memory Access<br>
 > > 6 : Write Back<br>
-> > 7 : Error<br>
-> <br>
+> > 7 : Error<br> > <br>
 >
 > alu_op<br>
 >
@@ -121,8 +120,7 @@
 > > 0110 : AND<br>
 > > 0111 : SLL<br>
 > > 1000 : SRL<br>
-> > 1001 : SRA<br>
-> <br>
+> > 1001 : SRA<br> > <br>
 >
 > rd_source<br>
 >

@@ -25,12 +25,14 @@ module controller(
     input [6:0] i_op_code,
     input [2:0] i_funct3,
     input [6:0] i_funct7,
-    input i_btaken,
+    input       i_btaken,
 
-    output o_pc,
+    output           o_pc,
     output reg [3:0] o_alu_op,
-    output reg o_alu_a, o_alu_b,
-    output reg [1:0] o_rd_source
+    output reg       o_alu_a, o_alu_b,
+    output           o_regfile_we,
+    output reg [1:0] o_rd_source,
+    output     [1:0] o_is_mem
     );
 
     `include "state.vh"
@@ -71,20 +73,23 @@ module controller(
     always @ (*) begin
         case (c_state)
             S_EXEI: begin
-                case (i_funct3)
-                    3'b000: o_alu_op = ADD;
-                    3'b010: o_alu_op = SLT;
-                    3'b011: o_alu_op = SLTU;
-                    3'b100: o_alu_op = XOR;
-                    3'b110: o_alu_op = OR;
-                    3'b111: o_alu_op = AND;
-                    3'b001: o_alu_op = SLL;
-                    3'b101: begin
-                        if (i_funct7[5])o_alu_op = SRA;
-                        else o_alu_op = SRL;
-                    end
-                    default: o_alu_op = ADD;
-                endcase
+                if (op_code == `OP_BRANCH) o_alu_op = ADD;
+                else begin
+                    case (i_funct3)
+                        3'b000: o_alu_op = ADD;
+                        3'b010: o_alu_op = SLT;
+                        3'b011: o_alu_op = SLTU;
+                        3'b100: o_alu_op = XOR;
+                        3'b110: o_alu_op = OR;
+                        3'b111: o_alu_op = AND;
+                        3'b001: o_alu_op = SLL;
+                        3'b101: begin
+                            if (i_funct7[5])o_alu_op = SRA;
+                            else o_alu_op = SRL;
+                        end
+                        default: o_alu_op = ADD;
+                    endcase                
+                end            
             end
             S_EXER: begin
                 case (i_funct3)
@@ -110,6 +115,9 @@ module controller(
         endcase
     end
     
+    // regfile we
+    assign o_regfile_we = (c_state == S_WB) ? 1'b1 : 1'b0;
+    
     // rd source
     always @ (*) begin
         case (op_code)
@@ -121,5 +129,6 @@ module controller(
         endcase
     end
 
+    assign o_is_mem = (c_state == S_MEM) ? {op_code[5], 1'b1} : 2'b00;
 
 endmodule
