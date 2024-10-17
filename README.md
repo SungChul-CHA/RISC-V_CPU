@@ -78,6 +78,8 @@
 | :-------------------------------------: |
 | ![fsm waveform](./src/fsm_waveform.png) |
 
+![fsm waveform](./src/fsm_waveform.png)
+
 > 0 : Fetch<br>
 > 1 : Decode<br>
 > 2 : EXE I-type<br>
