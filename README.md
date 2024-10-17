@@ -98,9 +98,8 @@
 | :------------------------------------: |
 | ![fsm waveform](./src/pc_waveform.png) |
 
-> State
->
-> 0 : Fetch<br>
+> State<br>
+>> 0 : Fetch<br>
 >> 1 : Decode<br>
 >> 2 : EXE I-type<br>
 >> 3 : EXE R-type<br>
@@ -109,7 +108,7 @@
 >> 6 : Write Back<br>
 >> 7 : Error<br>
 > <br>
-> alu_op
+> alu_op<br>
 >> 0000 : ADD<br>
 >> 0001 : SUB<br>
 >> 0010 : SLT<br>
@@ -121,7 +120,7 @@
 >> 1000 : SRL<br>
 >> 1001 : SRA<br>
 > <br>
-> rd_source
+> rd_source<br>
 >> 11 : OP_LUI<br>
 >> 10 : OP_JAL, OP_JALR<br>
 >> 01 : OP_LOAD<br>
