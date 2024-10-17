@@ -4,15 +4,25 @@
 # 1 "main.c"
 
 
-int main() {
- int i, j;
- int result;
- for (i = 1; i < 100; i++) {
-  for (j = 1; j < 100; j++) {
-   result = i + j;
-  }
+int mult(int a, int b) {
+ int result, i;
+ for (i = 0; i < b; i++) {
+  result += a;
  }
 
+ return result;
+}
+
+
+int main() {
+ int i, j;
+ int result[20];
+
+ for (i = 1; i < 20; i++) {
+  for (j = 1; j < 20; j++) {
+   result[i-1] = mult(i, j);
+  }
+ }
 
  return 0;
 }

@@ -86,3 +86,36 @@
 > 5 : Memory Access<br>
 > 6 : Write Back<br>
 > 7 : Error<br>
+
+|    <b>Program Counter Waveform</b>     |
+| :------------------------------------: |
+| ![fsm waveform](./src/pc_waveform.png) |
+
+> pc_next : pc + 4 <br>
+> pc : current pc
+
+|       <b>Controller Waveform</b>       |
+| :------------------------------------: |
+| ![fsm waveform](./src/pc_waveform.png) |
+
+> State
+>
+> > 0 : Fetch<br>
+> > 1 : Decode<br>
+> > 2 : EXE I-type<br>
+> > 3 : EXE R-type<br>
+> > 4 : B-type<br>
+> > 5 : Memory Access<br>
+> > 6 : Write Back<br>
+> > 7 : Error<br>
+> > <br>
+> > alu_op
+> > 01 : <br>
+> > 01 : <br>
+> > 01 : <br>
+> > 01 : <br>
+> > <br>
+> > rd_source
+> > 01 : <br>
+> > 01 : <br>
+> > 01 : <br>

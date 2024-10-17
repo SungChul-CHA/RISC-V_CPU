@@ -13,7 +13,7 @@ Program Header:
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000088  00000000  00000000  00000080  2**4
+  0 .text         00000108  00000000  00000000  00000080  2**4
                   CONTENTS, ALLOC, LOAD, CODE
   1 .data         00000400  00000400  00000400  00000480  2**4
                   CONTENTS, ALLOC, LOAD, DATA
@@ -21,15 +21,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   3 .comment      00000021  00000000  00000000  0000089c  2**0
                   CONTENTS, READONLY
-  4 .debug_line   0000011a  00000000  00000000  000008bd  2**0
+  4 .debug_line   000001da  00000000  00000000  000008bd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  5 .debug_info   0000005b  00000000  00000000  000009d7  2**0
+  5 .debug_info   00000069  00000000  00000000  00000a97  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  6 .debug_abbrev 00000035  00000000  00000000  00000a32  2**0
+  6 .debug_abbrev 00000035  00000000  00000000  00000b00  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  7 .debug_aranges 00000040  00000000  00000000  00000a68  2**3
+  7 .debug_aranges 00000040  00000000  00000000  00000b38  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  8 .debug_str    0000003c  00000000  00000000  00000aa8  2**0
+  8 .debug_str    00000041  00000000  00000000  00000b78  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 SYMBOL TABLE:
 00000000 l    d  .text	00000000 .text
@@ -44,89 +44,163 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 lab0.o
 00000400 l       .data	00000000 stack
 00000000 l    df *ABS*	00000000 main.c
-00000010 g     F .text	00000078 main
+00000068 g     F .text	000000a0 main
+00000010 g     F .text	00000058 mult
 
 
 
 Disassembly of section .text:
 
-00000000 <main-0x10>:
+00000000 <mult-0x10>:
 .text
 .align 4
 
         la sp, stack
    0:	40000113          	li	sp,1024
         j       main
-   4:	00c0006f          	j	10 <main>
+   4:	0640006f          	j	68 <main>
 	...
 
-00000010 <main>:
+00000010 <mult>:
 	.text
+	.align	2
+	.globl	mult
+	.type	mult, @function
+mult:
+	addi	sp,sp,-48
+  10:	fd010113          	addi	sp,sp,-48
+	sw	s0,44(sp)
+  14:	02812623          	sw	s0,44(sp)
+	addi	s0,sp,48
+  18:	03010413          	addi	s0,sp,48
+	sw	a0,-36(s0)
+  1c:	fca42e23          	sw	a0,-36(s0)
+	sw	a1,-40(s0)
+  20:	fcb42c23          	sw	a1,-40(s0)
+	sw	zero,-24(s0)
+  24:	fe042423          	sw	zero,-24(s0)
+	j	.L2
+  28:	0200006f          	j	48 <mult+0x38>
+.L3:
+	lw	a4,-20(s0)
+  2c:	fec42703          	lw	a4,-20(s0)
+	lw	a5,-36(s0)
+  30:	fdc42783          	lw	a5,-36(s0)
+	add	a5,a4,a5
+  34:	00f707b3          	add	a5,a4,a5
+	sw	a5,-20(s0)
+  38:	fef42623          	sw	a5,-20(s0)
+	lw	a5,-24(s0)
+  3c:	fe842783          	lw	a5,-24(s0)
+	addi	a5,a5,1
+  40:	00178793          	addi	a5,a5,1
+	sw	a5,-24(s0)
+  44:	fef42423          	sw	a5,-24(s0)
+.L2:
+	lw	a4,-24(s0)
+  48:	fe842703          	lw	a4,-24(s0)
+	lw	a5,-40(s0)
+  4c:	fd842783          	lw	a5,-40(s0)
+	blt	a4,a5,.L3
+  50:	fcf74ee3          	blt	a4,a5,2c <mult+0x1c>
+	lw	a5,-20(s0)
+  54:	fec42783          	lw	a5,-20(s0)
+	mv	a0,a5
+  58:	00078513          	mv	a0,a5
+	lw	s0,44(sp)
+  5c:	02c12403          	lw	s0,44(sp)
+	addi	sp,sp,48
+  60:	03010113          	addi	sp,sp,48
+	jr	ra
+  64:	00008067          	ret
+
+00000068 <main>:
+	.size	mult, .-mult
 	.align	2
 	.globl	main
 	.type	main, @function
 main:
-	addi	sp,sp,-32
-  10:	fe010113          	addi	sp,sp,-32
-	sw	s0,28(sp)
-  14:	00812e23          	sw	s0,28(sp)
-	addi	s0,sp,32
-  18:	02010413          	addi	s0,sp,32
+	addi	sp,sp,-112
+  68:	f9010113          	addi	sp,sp,-112
+	sw	ra,108(sp)
+  6c:	06112623          	sw	ra,108(sp)
+	sw	s0,104(sp)
+  70:	06812423          	sw	s0,104(sp)
+	sw	s1,100(sp)
+  74:	06912223          	sw	s1,100(sp)
+	addi	s0,sp,112
+  78:	07010413          	addi	s0,sp,112
 	li	a5,1
-  1c:	00100793          	li	a5,1
+  7c:	00100793          	li	a5,1
 	sw	a5,-20(s0)
-  20:	fef42623          	sw	a5,-20(s0)
-	j	.L2
-  24:	0440006f          	j	68 <main+0x58>
-.L5:
+  80:	fef42623          	sw	a5,-20(s0)
+	j	.L6
+  84:	05c0006f          	j	e0 <main+0x78>
+.L9:
 	li	a5,1
-  28:	00100793          	li	a5,1
+  88:	00100793          	li	a5,1
 	sw	a5,-24(s0)
-  2c:	fef42423          	sw	a5,-24(s0)
-	j	.L3
-  30:	0200006f          	j	50 <main+0x40>
-.L4:
-	lw	a4,-20(s0)
-  34:	fec42703          	lw	a4,-20(s0)
-	lw	a5,-24(s0)
-  38:	fe842783          	lw	a5,-24(s0)
-	add	a5,a4,a5
-  3c:	00f707b3          	add	a5,a4,a5
-	sw	a5,-28(s0)
-  40:	fef42223          	sw	a5,-28(s0)
-	lw	a5,-24(s0)
-  44:	fe842783          	lw	a5,-24(s0)
-	addi	a5,a5,1
-  48:	00178793          	addi	a5,a5,1
-	sw	a5,-24(s0)
-  4c:	fef42423          	sw	a5,-24(s0)
-.L3:
-	lw	a4,-24(s0)
-  50:	fe842703          	lw	a4,-24(s0)
-	li	a5,99
-  54:	06300793          	li	a5,99
-	ble	a4,a5,.L4
-  58:	fce7dee3          	bge	a5,a4,34 <main+0x24>
+  8c:	fef42423          	sw	a5,-24(s0)
+	j	.L7
+  90:	0380006f          	j	c8 <main+0x60>
+.L8:
 	lw	a5,-20(s0)
-  5c:	fec42783          	lw	a5,-20(s0)
+  94:	fec42783          	lw	a5,-20(s0)
+	addi	s1,a5,-1
+  98:	fff78493          	addi	s1,a5,-1
+	lw	a1,-24(s0)
+  9c:	fe842583          	lw	a1,-24(s0)
+	lw	a0,-20(s0)
+  a0:	fec42503          	lw	a0,-20(s0)
+	call	mult
+  a4:	f6dff0ef          	jal	10 <mult>
+	mv	a4,a0
+  a8:	00050713          	mv	a4,a0
+	slli	a5,s1,2
+  ac:	00249793          	slli	a5,s1,0x2
+	addi	a5,a5,-16
+  b0:	ff078793          	addi	a5,a5,-16
+	add	a5,a5,s0
+  b4:	008787b3          	add	a5,a5,s0
+	sw	a4,-88(a5)
+  b8:	fae7a423          	sw	a4,-88(a5)
+	lw	a5,-24(s0)
+  bc:	fe842783          	lw	a5,-24(s0)
 	addi	a5,a5,1
-  60:	00178793          	addi	a5,a5,1
+  c0:	00178793          	addi	a5,a5,1
+	sw	a5,-24(s0)
+  c4:	fef42423          	sw	a5,-24(s0)
+.L7:
+	lw	a4,-24(s0)
+  c8:	fe842703          	lw	a4,-24(s0)
+	li	a5,19
+  cc:	01300793          	li	a5,19
+	ble	a4,a5,.L8
+  d0:	fce7d2e3          	bge	a5,a4,94 <main+0x2c>
+	lw	a5,-20(s0)
+  d4:	fec42783          	lw	a5,-20(s0)
+	addi	a5,a5,1
+  d8:	00178793          	addi	a5,a5,1
 	sw	a5,-20(s0)
-  64:	fef42623          	sw	a5,-20(s0)
-.L2:
+  dc:	fef42623          	sw	a5,-20(s0)
+.L6:
 	lw	a4,-20(s0)
-  68:	fec42703          	lw	a4,-20(s0)
-	li	a5,99
-  6c:	06300793          	li	a5,99
-	ble	a4,a5,.L5
-  70:	fae7dce3          	bge	a5,a4,28 <main+0x18>
+  e0:	fec42703          	lw	a4,-20(s0)
+	li	a5,19
+  e4:	01300793          	li	a5,19
+	ble	a4,a5,.L9
+  e8:	fae7d0e3          	bge	a5,a4,88 <main+0x20>
 	li	a5,0
-  74:	00000793          	li	a5,0
+  ec:	00000793          	li	a5,0
 	mv	a0,a5
-  78:	00078513          	mv	a0,a5
-	lw	s0,28(sp)
-  7c:	01c12403          	lw	s0,28(sp)
-	addi	sp,sp,32
-  80:	02010113          	addi	sp,sp,32
+  f0:	00078513          	mv	a0,a5
+	lw	ra,108(sp)
+  f4:	06c12083          	lw	ra,108(sp)
+	lw	s0,104(sp)
+  f8:	06812403          	lw	s0,104(sp)
+	lw	s1,100(sp)
+  fc:	06412483          	lw	s1,100(sp)
+	addi	sp,sp,112
+ 100:	07010113          	addi	sp,sp,112
 	jr	ra
-  84:	00008067          	ret
+ 104:	00008067          	ret

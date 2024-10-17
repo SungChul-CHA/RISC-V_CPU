@@ -70,15 +70,10 @@ module rv32i_cpu(
     controller ctrl_inst(c_state, op_code, funct3, funct7, is_branch, pc_is_alu, alu_op, alu_a_is_pc, alu_b_is_imm, rd_source);
 
     
-    
     fsm fsm_inst (clk, async_reset_n, is_branch, op_code, o_unknown_inst, c_state);
-
-    
 
     alu alu_inst (alu_srcA, alu_srcB, alu_op, alu_out, N, Z, C, V);
     
-    
-
     regfile regfile_inst (clk, refile_we, rs1_addr, rs2_addr, rd_addr, rd_data, rs1_data, rs2_data);
 
 endmodule

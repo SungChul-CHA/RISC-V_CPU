@@ -36,7 +36,7 @@ module controller(
     `include "state.vh"
     `include "alu_op.vh"
     
-    wire [2:0] c_state = c_state;
+    wire [2:0] c_state = i_c_state;
     wire [6:0] op_code = i_op_code;
     // PC
     assign o_pc = (op_code == `OP_JAL | op_code == `OP_JALR | ((op_code == `OP_BRANCH) && i_btaken)) ? 1 : 0;
