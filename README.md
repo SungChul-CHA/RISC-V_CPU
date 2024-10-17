@@ -100,22 +100,29 @@
 
 > State
 >
-> > 0 : Fetch<br>
-> > 1 : Decode<br>
-> > 2 : EXE I-type<br>
-> > 3 : EXE R-type<br>
-> > 4 : B-type<br>
-> > 5 : Memory Access<br>
-> > 6 : Write Back<br>
-> > 7 : Error<br>
-> > <br>
-> > alu_op
-> > 01 : <br>
-> > 01 : <br>
-> > 01 : <br>
-> > 01 : <br>
-> > <br>
-> > rd_source
-> > 01 : <br>
-> > 01 : <br>
-> > 01 : <br>
+> 0 : Fetch<br>
+>> 1 : Decode<br>
+>> 2 : EXE I-type<br>
+>> 3 : EXE R-type<br>
+>> 4 : B-type<br>
+>> 5 : Memory Access<br>
+>> 6 : Write Back<br>
+>> 7 : Error<br>
+> <br>
+> alu_op
+>> 0000 : ADD<br>
+>> 0001 : SUB<br>
+>> 0010 : SLT<br>
+>> 0011 : SLTU<br>
+>> 0100 : XOR<br>
+>> 0101 : OR<br>
+>> 0110 : AND<br>
+>> 0111 : SLL<br>
+>> 1000 : SRL<br>
+>> 1001 : SRA<br>
+> <br>
+> rd_source
+>> 11 : OP_LUI<br>
+>> 10 : OP_JAL, OP_JALR<br>
+>> 01 : OP_LOAD<br>
+>> 00 : default
