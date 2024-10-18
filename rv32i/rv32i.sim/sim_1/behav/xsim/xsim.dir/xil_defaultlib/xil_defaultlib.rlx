@@ -2,15 +2,15 @@
 2020.2
 Feb 21 2023
 20:06:57
-/home/tony/Desktop/riscv/rv32i/rv32i.gen/sources_1/ip/tdpram_4096x32/sim/tdpram_4096x32.v,1729261229,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/PC.v,,tdpram_4096x32,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.gen/sources_1/ip/tdpram_4096x32/sim/tdpram_4096x32.v,1729262700,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/PC.v,,tdpram_4096x32,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_alu.v,1729169447,verilog,,,,tb_alu,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_controller.v,1729153921,verilog,,,,tb_controller,,,../../../../rv32i.srcs/sources_1/new,,,,,
-/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_cpu.v,1729181459,verilog,,,,tb_cpu,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_cpu.v,1729263318,verilog,,,,tb_cpu,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_fsm.v,1729135163,verilog,,,,tb_fsm,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_pc.v,1729148328,verilog,,,,tb_pc,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_tdpbram.v,1729133874,verilog,,,,dff;tb_tdpbram,,,../../../../rv32i.srcs/sources_1/new,,,,,
-/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/PC.v,1729260787,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu.v,,PC,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/PC.v,1729263183,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu.v,,PC,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu.v,1729179863,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/branch_resolution.v,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu_op.vh,alu,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu_op.vh,1729139399,verilog,,,,,,,,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/branch_resolution.v,1729245493,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/brent_kung_add_32bits.v,,branch_resolution,,,../../../../rv32i.srcs/sources_1/new,,,,,
@@ -22,6 +22,6 @@ Feb 21 2023
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/ir_decoder.v,1729181752,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/p_2bits.v,,ir_decoder,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/p_2bits.v,1729166959,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/regfile.v,,p_2bits,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/regfile.v,1729175905,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/rv32i_cpu.v,,regfile,,,../../../../rv32i.srcs/sources_1/new,,,,,
-/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/rv32i_cpu.v,1729254873,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_cpu.v,,rv32i_cpu,,,../../../../rv32i.srcs/sources_1/new,,,,,
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/rv32i_cpu.v,1729263199,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_cpu.v,,rv32i_cpu,,,../../../../rv32i.srcs/sources_1/new,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/state.vh,1729136984,verilog,,,,,,,,,,,,
 /home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/top.v,1729039684,verilog,,/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_top.v,,top,,,../../../../rv32i.srcs/sources_1/new,,,,,

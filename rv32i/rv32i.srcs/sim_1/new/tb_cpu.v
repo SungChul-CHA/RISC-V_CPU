@@ -26,19 +26,19 @@ module tb_cpu;
     
     // RAM
     wire [3:0] mem_we;
-    wire [11:0] pc, mem_addr;
+    wire [31:0] pc, mem_addr;
     wire [31:0] inst, mem_r_data, mem_w_data;
     tdpram_4096x32 tdpram (
         .clka (clk), 
         .ena (1'b1), 
         .wea (1'b0), 
-        .addra (pc),
+        .addra (pc[11:0]),
         .dina ('d0), 
         .douta (inst), 
         .clkb (clk), 
         .enb (1'b1), 
         .web (mem_we),
-        .addrb(mem_addr), 
+        .addrb(mem_addr[11:0]), 
         .dinb (mem_w_data), 
         .doutb (mem_r_data)
     );

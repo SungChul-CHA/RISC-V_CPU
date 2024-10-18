@@ -26,13 +26,13 @@ module rv32i_cpu(
     input [31:0] i_inst, i_mem_read_data,
     
     output            o_unknown_inst,
-    output     [11:0] o_pc, o_address,
+    output     [31:0] o_pc, o_address,
     output     [31:0] o_mem_write_data,
     output reg [ 3:0] o_mem_we
     );
     
     // PC
-    wire [11:0] pc, pc_4;
+    wire [31:0] pc, pc_4;
 
     // parsing instruction
     wire [6:0] op_code;

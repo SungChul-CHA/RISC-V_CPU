@@ -1,10 +1,10 @@
 // Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2.2 (lin64) Build 3788238 Tue Feb 21 19:59:23 MST 2023
-// Date        : Fri Oct 18 23:20:56 2024
+// Date        : Fri Oct 18 22:50:20 2024
 // Host        : tony running 64-bit Red Hat Enterprise Linux release 8.10 (Ootpa)
-// Command     : write_verilog -force -mode synth_stub
-//               /home/tony/Desktop/riscv/rv32i/rv32i.gen/sources_1/ip/tdpram_4096x32/tdpram_4096x32_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top tdpram_4096x32 -prefix
+//               tdpram_4096x32_ tdpram_4096x32_stub.v
 // Design      : tdpram_4096x32
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

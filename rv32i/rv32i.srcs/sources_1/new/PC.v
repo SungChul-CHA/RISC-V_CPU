@@ -25,14 +25,14 @@ module PC(
     input  [2:0]  c_state,
     input  [11:0] i_alu_out,
     
-    output [11:0] o_pc, o_pc4
+    output [31:0] o_pc, o_pc4
     );
 
     reg [11:0] pc_next, pc_next_reg;
 
     always @ (*) begin
-        if (i_is_alu) pc_next = i_alu_out & {{11{1'b1}}, 1'b0};
-        else pc_next = o_pc + 12'd1;
+        if (i_is_alu) pc_next = i_alu_out & 32'hfffe;
+        else pc_next = o_pc + 31'd4;
     end
 
     always @ (posedge clk or negedge async_reset_n) begin
