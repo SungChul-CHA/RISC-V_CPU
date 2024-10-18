@@ -26,7 +26,7 @@ module branch_resolution(
     
     output reg is_branch
     );
-    
+        
     always @ (*) begin
         case (funct3)
             3'b000: is_branch = Z;             // BEQ

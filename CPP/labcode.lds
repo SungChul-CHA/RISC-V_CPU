@@ -9,7 +9,7 @@ SECTIONS
                 *(.rodata)
         }
 
-        . = ALIGN(1024);
+        . = ALIGN(2048);
 
         .data : {*(.data)}
 

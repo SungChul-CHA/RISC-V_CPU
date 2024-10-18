@@ -21,13 +21,14 @@
 `include "instruction.vh"
 
 module controller(
+    input clk, async_reset_n,
     input [2:0] i_c_state,
     input [6:0] i_op_code,
     input [2:0] i_funct3,
     input [6:0] i_funct7,
     input       i_btaken,
 
-    output           o_pc,
+    output reg       o_pc,
     output reg [3:0] o_alu_op,
     output reg       o_alu_a, o_alu_b,
     output           o_regfile_we,
@@ -40,12 +41,26 @@ module controller(
     
     wire [2:0] c_state = i_c_state;
     wire [6:0] op_code = i_op_code;
+
     // PC
-    assign o_pc = (op_code == `OP_JAL | op_code == `OP_JALR | ((op_code == `OP_BRANCH) && i_btaken)) ? 1 : 0;
+    always @ (*) begin
+        if (c_state == S_EXEI) begin
+            if ((op_code == `OP_JAL) || (op_code == `OP_JALR) || (op_code == `OP_BRANCH))
+                o_pc = 1'b1;
+            else
+                o_pc = 1'b0;
+        end
+        else o_pc = 1'b0;
+        
+    end
 
     // ALU source
     always @ (*) begin
         case (c_state)
+            S_FETCH: begin  // reset
+                o_alu_a = 1'b1;
+                o_alu_b = 1'b0;
+            end
             S_EXEI: begin   
                 if (op_code == `OP_AUIPC | op_code == `OP_JAL | op_code == `OP_BRANCH)
                     o_alu_a = 1'b1; // 1 : AUIPC, JAL, BRANCH
@@ -63,8 +78,8 @@ module controller(
                 o_alu_b = 1'b0;
             end
             default: begin 
-                o_alu_a = 1'b0;
-                o_alu_b = 1'b1;
+                o_alu_a = o_alu_a;
+                o_alu_b = o_alu_b;
             end
         endcase
     end
@@ -73,7 +88,7 @@ module controller(
     always @ (*) begin
         case (c_state)
             S_EXEI: begin
-                if (op_code == `OP_BRANCH) o_alu_op = ADD;
+                if (op_code != `OP_I) o_alu_op = ADD;
                 else begin
                     case (i_funct3)
                         3'b000: o_alu_op = ADD;
@@ -129,6 +144,6 @@ module controller(
         endcase
     end
 
-    assign o_is_mem = (c_state == S_MEM) ? {op_code[5], 1'b1} : 2'b00;
+    assign o_is_mem = (c_state == S_MEM) ? {op_code[5], 1'b1} : 2'b00;  // 3: Store, 2: Load, 0: Not Memory Access
 
 endmodule

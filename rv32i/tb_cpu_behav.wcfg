@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,000.001 ns"></ZoomEndTime>
-      <Cursor1Time time="380.000 ns"></Cursor1Time>
+      <ZoomEndTime time="269.801 ns"></ZoomEndTime>
+      <Cursor1Time time="60.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="165"></NameColumnWidth>
-      <ValueColumnWidth column_width="67"></ValueColumnWidth>
+      <NameColumnWidth column_width="154"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="37" />
+   <WVObjectSize size="49" />
    <wvobject type="logic" fp_name="/tb_cpu/DUT/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -28,13 +28,45 @@
       <obj_property name="ElementShortName">async_reset_n</obj_property>
       <obj_property name="ObjectShortName">async_reset_n</obj_property>
    </wvobject>
+   <wvobject fp_name="divider50" type="divider">
+      <obj_property name="label">FSM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_cpu/DUT/o_unknown_inst">
+      <obj_property name="ElementShortName">o_unknown_inst</obj_property>
+      <obj_property name="ObjectShortName">o_unknown_inst</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/fsm_inst/n_state">
+      <obj_property name="ElementShortName">n_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">n_state[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/c_state">
       <obj_property name="ElementShortName">c_state[2:0]</obj_property>
       <obj_property name="ObjectShortName">c_state[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_cpu/DUT/pc_is_alu">
-      <obj_property name="ElementShortName">pc_is_alu</obj_property>
-      <obj_property name="ObjectShortName">pc_is_alu</obj_property>
+   <wvobject type="logic" fp_name="/tb_cpu/DUT/refile_we">
+      <obj_property name="ElementShortName">refile_we</obj_property>
+      <obj_property name="ObjectShortName">refile_we</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/is_MEM">
+      <obj_property name="ElementShortName">is_MEM[1:0]</obj_property>
+      <obj_property name="ObjectShortName">is_MEM[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider48" type="divider">
+      <obj_property name="label">PC</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_cpu/DUT/pc_is_alu_reg">
+      <obj_property name="ElementShortName">pc_is_alu_reg</obj_property>
+      <obj_property name="ObjectShortName">pc_is_alu_reg</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/pc_inst/i_alu_out">
+      <obj_property name="ElementShortName">i_alu_out[11:0]</obj_property>
+      <obj_property name="ObjectShortName">i_alu_out[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/pc_4">
       <obj_property name="ElementShortName">pc_4[11:0]</obj_property>
@@ -46,13 +78,14 @@
       <obj_property name="ObjectShortName">pc[11:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_cpu/DUT/o_unknown_inst">
-      <obj_property name="ElementShortName">o_unknown_inst</obj_property>
-      <obj_property name="ObjectShortName">o_unknown_inst</obj_property>
+   <wvobject fp_name="divider49" type="divider">
+      <obj_property name="label">Instruction Decoder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/i_inst">
       <obj_property name="ElementShortName">i_inst[31:0]</obj_property>
       <obj_property name="ObjectShortName">i_inst[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/op_code">
       <obj_property name="ElementShortName">op_code[6:0]</obj_property>
@@ -64,17 +97,56 @@
       <obj_property name="ObjectShortName">funct3[2:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/rd">
+      <obj_property name="ElementShortName">rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/rs1">
+      <obj_property name="ElementShortName">rs1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/rs2">
+      <obj_property name="ElementShortName">rs2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/funct7">
+      <obj_property name="ElementShortName">funct7[6:0]</obj_property>
+      <obj_property name="ObjectShortName">funct7[6:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/imm">
+      <obj_property name="ElementShortName">imm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imm[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider51" type="divider">
+      <obj_property name="label">Branch Resolution</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/tb_cpu/DUT/is_branch">
       <obj_property name="ElementShortName">is_branch</obj_property>
       <obj_property name="ObjectShortName">is_branch</obj_property>
    </wvobject>
-   <wvobject fp_name="divider63" type="divider">
-      <obj_property name="label">ALU</obj_property>
+   <wvobject fp_name="divider83" type="divider">
+      <obj_property name="label">Controller</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/alu_op">
       <obj_property name="ElementShortName">alu_op[3:0]</obj_property>
       <obj_property name="ObjectShortName">alu_op[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/rd_source">
+      <obj_property name="ElementShortName">rd_source[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_source[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider63" type="divider">
+      <obj_property name="label">ALU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_cpu/DUT/alu_a_is_pc">
       <obj_property name="ElementShortName">alu_a_is_pc</obj_property>
@@ -89,11 +161,6 @@
       <obj_property name="ElementShortName">alu_b_is_imm</obj_property>
       <obj_property name="ObjectShortName">alu_b_is_imm</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_cpu/DUT/imm">
-      <obj_property name="ElementShortName">imm[31:0]</obj_property>
-      <obj_property name="ObjectShortName">imm[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/alu_srcB">
       <obj_property name="ElementShortName">alu_srcB[31:0]</obj_property>
       <obj_property name="ObjectShortName">alu_srcB[31:0]</obj_property>
@@ -102,6 +169,11 @@
    <wvobject type="array" fp_name="/tb_cpu/DUT/alu_out">
       <obj_property name="ElementShortName">alu_out[31:0]</obj_property>
       <obj_property name="ObjectShortName">alu_out[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_cpu/DUT/alu_out_reg">
+      <obj_property name="ElementShortName">alu_out_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out_reg[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_cpu/DUT/N">
@@ -124,59 +196,53 @@
       <obj_property name="label">Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_cpu/DUT/is_MEM">
-      <obj_property name="ElementShortName">is_MEM[1:0]</obj_property>
-      <obj_property name="ObjectShortName">is_MEM[1:0]</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/o_address">
       <obj_property name="ElementShortName">o_address[11:0]</obj_property>
       <obj_property name="ObjectShortName">o_address[11:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/read_data">
       <obj_property name="ElementShortName">read_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">read_data[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/write_data">
       <obj_property name="ElementShortName">write_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="divider62" type="divider">
       <obj_property name="label">Regfile</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_cpu/DUT/refile_we">
-      <obj_property name="ElementShortName">refile_we</obj_property>
-      <obj_property name="ObjectShortName">refile_we</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/rs1_addr">
       <obj_property name="ElementShortName">rs1_addr[4:0]</obj_property>
       <obj_property name="ObjectShortName">rs1_addr[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/rs1_data">
       <obj_property name="ElementShortName">rs1_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">rs1_data[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/rs2_addr">
       <obj_property name="ElementShortName">rs2_addr[4:0]</obj_property>
       <obj_property name="ObjectShortName">rs2_addr[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/rs2_data">
       <obj_property name="ElementShortName">rs2_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">rs2_data[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/rd_addr">
       <obj_property name="ElementShortName">rd_addr[4:0]</obj_property>
       <obj_property name="ObjectShortName">rd_addr[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_cpu/DUT/rd_source">
-      <obj_property name="ElementShortName">rd_source[1:0]</obj_property>
-      <obj_property name="ObjectShortName">rd_source[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_cpu/DUT/rd_data">
       <obj_property name="ElementShortName">rd_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">rd_data[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

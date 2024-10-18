@@ -1,0 +1,35 @@
+srcscan starts
+INFO: analyzing module PC (VERI-9002)
+INFO: analyzing module alu (VERI-9002)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu.v(29): INFO: Compiling verilog file "/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu_op.vh" included at line 29. (VERI-9003)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu.v(29): INFO: back to file '/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu.v' (VERI-2320)
+INFO: analyzing module branch_resolution (VERI-9002)
+INFO: analyzing module brent_kung_add_32bits (VERI-9002)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/controller.v(21): INFO: Compiling verilog file "/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/instruction.vh" included at line 21. (VERI-9003)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/controller.v(21): INFO: back to file '/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/controller.v' (VERI-2320)
+INFO: analyzing module controller (VERI-9002)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/controller.v(38): INFO: Compiling verilog file "/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/state.vh" included at line 38. (VERI-9003)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/controller.v(38): INFO: back to file '/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/controller.v' (VERI-2320)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/controller.v(39): INFO: Compiling verilog file "/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/alu_op.vh" included at line 39. (VERI-9003)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/controller.v(39): INFO: back to file '/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/controller.v' (VERI-2320)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v(21): INFO: Compiling verilog file "/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/instruction.vh" included at line 21. (VERI-9003)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v(21): INFO: back to file '/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v' (VERI-2320)
+INFO: analyzing module fsm (VERI-9002)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v(30): INFO: Compiling verilog file "/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/state.vh" included at line 30. (VERI-9003)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v(30): INFO: back to file '/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/fsm.v' (VERI-2320)
+INFO: analyzing module g_2bits (VERI-9002)
+INFO: analyzing module ir_decoder (VERI-9002)
+INFO: analyzing module p_2bits (VERI-9002)
+INFO: analyzing module regfile (VERI-9002)
+INFO: analyzing module rv32i_cpu (VERI-9002)
+INFO: analyzing module tb_test (VERI-9002)
+INFO: analyzing module top (VERI-9002)
+Listing tops:
+VeriTop library:xil_defaultlib mod:tb_test
+VeriTop library:xil_defaultlib mod:top
+END of tops
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/tb_test.v(23): INFO: compiling module 'tb_test_default' (VERI-1018)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/top.v(23): INFO: compiling module 'top_default' (VERI-1018)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/top.v(34): WARNING: Module <tdpram_4096x32> not found while processing module instance <iMEM> (VERI-1063)
+/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sources_1/new/top.v(32): WARNING: port 'i_inst' is not connected on this instance (VERI-2435)
+srcscan exits with return value 0

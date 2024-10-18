@@ -43,10 +43,13 @@ module rv32i_cpu(
     wire [31:0] imm;
 
     // Controller
-    wire is_branch;
     wire alu_a_is_pc, alu_b_is_imm, pc_is_alu;
     wire [1:0] rd_source;   // 00 : default, 01 : read_data, 10 : pc + 4, 11 : lui
     wire [1:0] is_MEM;      // load : 01, store : 11, none : 00 
+    reg pc_is_alu_reg;
+    
+    // Branch resolution
+    wire is_branch;
     
     // FSM
     wire [2:0] c_state;
@@ -71,13 +74,21 @@ module rv32i_cpu(
     // PC
     assign o_pc = pc;
 
-    PC pc_inst (clk, async_reset_n, pc_is_alu, c_state, alu_out_reg, pc, pc_4);
+    PC pc_inst (clk, async_reset_n, pc_is_alu_reg, c_state, alu_out_reg, pc, pc_4);
 
     // Instruction Decoder
     ir_decoder ir_decoder_inst (i_inst, op_code, rd, funct3, rs1, rs2, funct7, imm);
 
     // Controller
-    controller ctrl_inst(c_state, op_code, funct3, funct7, is_branch, pc_is_alu, alu_op, alu_a_is_pc, alu_b_is_imm, refile_we, rd_source, is_MEM);
+    controller ctrl_inst(clk, async_reset_n, c_state, op_code, funct3, funct7, is_branch, pc_is_alu, alu_op, alu_a_is_pc, alu_b_is_imm, refile_we, rd_source, is_MEM);
+    
+    always @ (posedge clk or negedge async_reset_n) begin
+        if (!async_reset_n) pc_is_alu_reg <= 1'b0;
+        else pc_is_alu_reg <= pc_is_alu;
+    end
+    
+    // branch resolution
+    branch_resolution btake_inst (funct3, N, Z, C, V, is_branch);
     
     // FSM
     fsm fsm_inst (clk, async_reset_n, is_branch, op_code, o_unknown_inst, c_state);
@@ -105,8 +116,7 @@ module rv32i_cpu(
         end
     end
     
-    // branch resolution
-    branch_resolution btake_inst (funct3, N, Z, C, V, is_branch);
+    
     
     // Memory R/W
     assign o_address = (is_MEM[0]) ? alu_out_reg : 'd0;

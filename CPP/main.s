@@ -37,10 +37,12 @@ mult:
 	.globl	main
 	.type	main, @function
 main:
-	addi	sp,sp,-64
-	sw	ra,60(sp)
-	sw	s0,56(sp)
-	addi	s0,sp,64
+	addi	sp,sp,-352
+	sw	ra,348(sp)
+	sw	s0,344(sp)
+	sw	s1,340(sp)
+	sw	s2,336(sp)
+	addi	s0,sp,352
 	li	a5,1
 	sw	a5,-20(s0)
 	j	.L6
@@ -49,39 +51,50 @@ main:
 	sw	a5,-24(s0)
 	j	.L7
 .L8:
+	lw	a5,-20(s0)
+	addi	s1,a5,-1
+	lw	a5,-24(s0)
+	addi	s2,a5,-1
 	lw	a1,-24(s0)
 	lw	a0,-20(s0)
 	call	mult
-	mv	a3,a0
-	lw	a4,-20(s0)
-	mv	a5,a4
-	slli	a5,a5,1
-	add	a5,a5,a4
-	lw	a4,-24(s0)
-	add	a5,a5,a4
+	mv	a4,a0
+	mv	a5,s1
+	slli	a5,a5,3
+	add	a5,a5,s1
+	add	a5,a5,s2
 	slli	a5,a5,2
 	addi	a5,a5,-16
 	add	a5,a5,s0
-	sw	a3,-44(a5)
+	sw	a4,-332(a5)
 	lw	a5,-24(s0)
 	addi	a5,a5,1
 	sw	a5,-24(s0)
 .L7:
 	lw	a4,-24(s0)
-	li	a5,3
+	li	a5,9
 	ble	a4,a5,.L8
 	lw	a5,-20(s0)
 	addi	a5,a5,1
 	sw	a5,-20(s0)
 .L6:
 	lw	a4,-20(s0)
-	li	a5,3
+	li	a5,9
 	ble	a4,a5,.L9
+	lw	a4,-228(s0)
+	li	a5,9
+	bne	a4,a5,.L10
 	li	a5,0
+	j	.L12
+.L10:
+	li	a5,-1
+.L12:
 	mv	a0,a5
-	lw	ra,60(sp)
-	lw	s0,56(sp)
-	addi	sp,sp,64
+	lw	ra,348(sp)
+	lw	s0,344(sp)
+	lw	s1,340(sp)
+	lw	s2,336(sp)
+	addi	sp,sp,352
 	jr	ra
 	.size	main, .-main
 	.ident	"GCC: (gc891d8dc23e-dirty) 13.2.0"

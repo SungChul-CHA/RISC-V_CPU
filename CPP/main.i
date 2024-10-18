@@ -16,13 +16,15 @@ int mult(int a, int b) {
 
 int main() {
  int i, j;
- int result[3][3];
+ int result[9][9];
 
- for (i = 1; i < 3 +1; i++) {
-  for (j = 1; j < 3 +1; j++) {
-   result[i][j] = mult(i, j);
+ for (i = 1; i < 9 +1; i++) {
+  for (j = 1; j < 9 +1; j++) {
+   result[i-1][j-1] = mult(i, j);
   }
  }
 
- return 0;
+ if (result[3][3] == 9) return 0;
+ else return -1;
+
 }

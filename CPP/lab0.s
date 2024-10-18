@@ -8,4 +8,4 @@
 .data
 .align 4
 stack:
-        .space 1024
+        .space 2048
