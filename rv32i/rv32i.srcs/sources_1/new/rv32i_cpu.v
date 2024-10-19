@@ -32,7 +32,7 @@ module rv32i_cpu(
     );
     
     // PC
-    wire [31:0] pc, pc_4;
+    wire [31:0] pc, pc_4, pc_in;
 
     // parsing instruction
     wire [6:0] op_code;
@@ -49,7 +49,7 @@ module rv32i_cpu(
     reg pc_is_alu_reg;
     
     // Branch resolution
-    wire is_branch;
+    wire is_branch, is_btrue;
     
     // FSM
     wire [2:0] c_state;
@@ -73,8 +73,8 @@ module rv32i_cpu(
 
     // PC
     assign o_pc = pc;
-
-    PC pc_inst (clk, async_reset_n, pc_is_alu_reg, c_state, alu_out_reg, pc, pc_4);
+    assign pc_in = (op_code == 7'b1100111) ? alu_out_reg & 32'hfffe : alu_out_reg;  // JALR
+    PC pc_inst (clk, async_reset_n, pc_is_alu_reg, c_state, pc_in, pc, pc_4);
 
     // Instruction Decoder
     ir_decoder ir_decoder_inst (i_inst, op_code, rd, funct3, rs1, rs2, funct7, imm);
@@ -88,7 +88,8 @@ module rv32i_cpu(
     end
     
     // branch resolution
-    branch_resolution btake_inst (funct3, N, Z, C, V, is_branch);
+    assign is_branch = (op_code == 7'b1100011) && is_btrue;
+    branch_resolution btake_inst (funct3, N, Z, C, V, is_btrue);
     
     // FSM
     fsm fsm_inst (clk, async_reset_n, is_branch, op_code, o_unknown_inst, c_state);

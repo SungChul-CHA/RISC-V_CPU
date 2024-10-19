@@ -1,0 +1,113 @@
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2.2 (lin64) Build 3788238 Tue Feb 21 19:59:23 MST 2023
+| Date         : Sat Oct 19 17:31:12 2024
+| Host         : tony running 64-bit Red Hat Enterprise Linux release 8.10 (Ootpa)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7z020
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    35 |
+|    Minimum number of control sets                        |    35 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    10 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    35 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    34 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              34 |           16 |
+| No           | No                    | Yes                    |              36 |           22 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             992 |          434 |
+| Yes          | No                    | Yes                    |              32 |           17 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------------------+-----------------------------------------------------+------------------+------------------+----------------+--------------+
+|                    Clock Signal                   |                    Enable Signal                    | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------------------------------+-----------------------------------------------------+------------------+------------------+----------------+--------------+
+|  iCPU/fsm_inst/FSM_sequential_o_c_state_reg[0]_17 |                                                     |                  |                2 |              2 |         1.00 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[0]_10[0] |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_5[0]  |                  |               19 |             32 |         1.68 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[0]_16[0] | iCPU/pc_inst/btn |               17 |             32 |         1.88 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[0]_6[0]  |                  |               13 |             32 |         2.46 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[0]_9[0]  |                  |               13 |             32 |         2.46 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[0]_8[0]  |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_10[0] |                  |               15 |             32 |         2.13 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_11[0] |                  |               12 |             32 |         2.67 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_22[0] |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_24[0] |                  |               17 |             32 |         1.88 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_12[0] |                  |               15 |             32 |         2.13 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_13[0] |                  |               15 |             32 |         2.13 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_14[0] |                  |               12 |             32 |         2.67 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_15[0] |                  |               12 |             32 |         2.67 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_3[0]  |                  |               13 |             32 |         2.46 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_4[0]  |                  |               14 |             32 |         2.29 |
+|  n_0_800_BUFG                                     |                                                     |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/E[0]                                  |                  |               12 |             32 |         2.67 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_16[0] |                  |               17 |             32 |         1.88 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_17[0] |                  |               15 |             32 |         2.13 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_18[0] |                  |               15 |             32 |         2.13 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_19[0] |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_2[0]  |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_20[0] |                  |               16 |             32 |         2.00 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_21[0] |                  |                8 |             32 |         4.00 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_23[0] |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_25[0] |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_7[0]  |                  |               12 |             32 |         2.67 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_8[0]  |                  |               13 |             32 |         2.46 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_9[0]  |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[0]_7[0]  |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[2]_6[0]  |                  |               14 |             32 |         2.29 |
+|  iPLL/inst/clk_out1                               | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[0]_0[0]  |                  |               16 |             32 |         2.00 |
+|  iPLL/inst/clk_out1                               |                                                     | iCPU/pc_inst/btn |               22 |             36 |         1.64 |
++---------------------------------------------------+-----------------------------------------------------+------------------+------------------+----------------+--------------+
+
+

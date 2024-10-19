@@ -23,15 +23,15 @@
 module PC(
     input clk, async_reset_n, i_is_alu,
     input  [2:0]  c_state,
-    input  [11:0] i_alu_out,
+    input  [31:0] i_pc_in,
     
     output [31:0] o_pc, o_pc4
     );
 
-    reg [11:0] pc_next, pc_next_reg;
+    reg [31:0] pc_next, pc_next_reg;
 
     always @ (*) begin
-        if (i_is_alu) pc_next = i_alu_out & 32'hfffe;
+        if (i_is_alu) pc_next = i_pc_in;
         else pc_next = o_pc + 31'd4;
     end
 

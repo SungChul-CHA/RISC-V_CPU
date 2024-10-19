@@ -128,3 +128,40 @@
 > > 10 : OP_JAL, OP_JALR<br>
 > > 01 : OP_LOAD<br>
 > > 00 : default
+
+---
+
+## 완성
+
+![final_diagram](./src/final_diagram.png)
+
+<br>
+
+![waveform0](./src/top_waveform_0.png)
+
+![dump0](./src/dump0.png)
+
+> c_state = 0 : Fetch &rarr; PC Update<br>
+> c_state = 1 : Decode &rarr; Instruction Decode
+
+![waveform1](./src/top_waveform_1.png)
+
+> c_state = 4 : Branch &rarr; ALU 연산을 통해 다음 state 결정<br>
+> is_branch 가 1이면 EXEI(c_state = 2)로 넘어가 PC 값 계산
+
+![waveform2](./src/top_waveform_2.png)
+
+> 572.5ns : Branch Instruction의 Decode state<br>
+> Decode &rarr; Branch &rarr; EXEI &rarr; WB<br>
+> c_state = EXEI &rarr; alu_out : 284<br>
+> WB state일 때, 284가 PC module로 들어가 pc_next로 assign 되고,<br>
+> 다음 clock(c_state = Fetch)에 pc_next_reg로 update 되며,<br>
+> pc로 assign 됨.
+
+![dump1](./src/dump1.png)
+
+![waveform3](./src/top_waveform_3.png)
+
+![dump2](./src/dump2.png)
+
+> 마지막 명령어인 0x00008067

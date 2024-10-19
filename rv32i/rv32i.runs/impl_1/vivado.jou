@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2.2 (64-bit)
+# SW Build 3788238 on Tue Feb 21 19:59:23 MST 2023
+# IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
+# Start of session at: Sat Oct 19 17:30:43 2024
+# Process ID: 50744
+# Current directory: /home/tony/Desktop/riscv/rv32i/rv32i.runs/impl_1
+# Command line: vivado -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+# Log file: /home/tony/Desktop/riscv/rv32i/rv32i.runs/impl_1/top.vdi
+# Journal file: /home/tony/Desktop/riscv/rv32i/rv32i.runs/impl_1/vivado.jou
+# Running On: tony, OS: Linux, CPU Frequency: 2700.000 MHz, CPU Physical cores: 14, Host memory: 33431 MB
+#-----------------------------------------------------------
+source top.tcl -notrace

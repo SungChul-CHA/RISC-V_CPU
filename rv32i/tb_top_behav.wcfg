@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_top_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="532.333 ns"></ZoomStartTime>
+      <ZoomEndTime time="597.984 ns"></ZoomEndTime>
+      <Cursor1Time time="592.500 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="178"></NameColumnWidth>
+      <ValueColumnWidth column_width="78"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="5" />
+   <wave_markers>
+      <marker label="" time="540000" />
+      <marker label="" time="547500" />
+      <marker label="" time="570000" />
+      <marker label="" time="572500" />
+      <marker label="" time="592500" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/tb_top/DUT/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/async_reset_n">
+      <obj_property name="ElementShortName">async_reset_n</obj_property>
+      <obj_property name="ObjectShortName">async_reset_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/unknown">
+      <obj_property name="ElementShortName">unknown</obj_property>
+      <obj_property name="ObjectShortName">unknown</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group96">
+      <obj_property name="label">CPU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="divider94" type="divider">
+         <obj_property name="label">CPU</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/c_state">
+         <obj_property name="ElementShortName">c_state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">c_state[2:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/refile_we">
+         <obj_property name="ElementShortName">refile_we</obj_property>
+         <obj_property name="ObjectShortName">refile_we</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/is_branch">
+         <obj_property name="ElementShortName">is_branch</obj_property>
+         <obj_property name="ObjectShortName">is_branch</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/is_MEM">
+         <obj_property name="ElementShortName">is_MEM[1:0]</obj_property>
+         <obj_property name="ObjectShortName">is_MEM[1:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider152" type="divider">
+         <obj_property name="label">PC</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/pc_is_alu_reg">
+         <obj_property name="ElementShortName">pc_is_alu_reg</obj_property>
+         <obj_property name="ObjectShortName">pc_is_alu_reg</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/pc_inst/pc_next">
+         <obj_property name="ElementShortName">pc_next[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_next[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/pc_inst/pc_next_reg">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">pc_next_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_next_reg[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">pc_next_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pc">
+         <obj_property name="ElementShortName">pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/i_inst">
+         <obj_property name="ElementShortName">i_inst[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_inst[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider168" type="divider">
+         <obj_property name="label">Decode</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/op_code">
+         <obj_property name="ElementShortName">op_code[6:0]</obj_property>
+         <obj_property name="ObjectShortName">op_code[6:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/rd">
+         <obj_property name="ElementShortName">rd[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/funct3">
+         <obj_property name="ElementShortName">funct3[2:0]</obj_property>
+         <obj_property name="ObjectShortName">funct3[2:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/rs1">
+         <obj_property name="ElementShortName">rs1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/rs2">
+         <obj_property name="ElementShortName">rs2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/funct7">
+         <obj_property name="ElementShortName">funct7[6:0]</obj_property>
+         <obj_property name="ObjectShortName">funct7[6:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/imm">
+         <obj_property name="ElementShortName">imm[31:0]</obj_property>
+         <obj_property name="ObjectShortName">imm[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider154" type="divider">
+         <obj_property name="label">ALU Source A</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/alu_a_is_pc">
+         <obj_property name="ElementShortName">alu_a_is_pc</obj_property>
+         <obj_property name="ObjectShortName">alu_a_is_pc</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pc">
+         <obj_property name="ElementShortName">pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/rs1_data">
+         <obj_property name="ElementShortName">rs1_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1_data[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/alu_srcA">
+         <obj_property name="ElementShortName">alu_srcA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_srcA[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider155" type="divider">
+         <obj_property name="label">ALU Source B</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/alu_b_is_imm">
+         <obj_property name="ElementShortName">alu_b_is_imm</obj_property>
+         <obj_property name="ObjectShortName">alu_b_is_imm</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/imm">
+         <obj_property name="ElementShortName">imm[31:0]</obj_property>
+         <obj_property name="ObjectShortName">imm[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/rs2_data">
+         <obj_property name="ElementShortName">rs2_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2_data[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/alu_srcB">
+         <obj_property name="ElementShortName">alu_srcB[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_srcB[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/alu_op">
+         <obj_property name="ElementShortName">alu_op[3:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op[3:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/alu_out">
+         <obj_property name="ElementShortName">alu_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_out[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider176" type="divider">
+         <obj_property name="label">Branch</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/funct3">
+         <obj_property name="ElementShortName">funct3[2:0]</obj_property>
+         <obj_property name="ObjectShortName">funct3[2:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/N">
+         <obj_property name="ElementShortName">N</obj_property>
+         <obj_property name="ObjectShortName">N</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/Z">
+         <obj_property name="ElementShortName">Z</obj_property>
+         <obj_property name="ObjectShortName">Z</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/C">
+         <obj_property name="ElementShortName">C</obj_property>
+         <obj_property name="ObjectShortName">C</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/V">
+         <obj_property name="ElementShortName">V</obj_property>
+         <obj_property name="ObjectShortName">V</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/iCPU/is_btrue">
+         <obj_property name="ElementShortName">is_btrue</obj_property>
+         <obj_property name="ObjectShortName">is_btrue</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider158" type="divider">
+         <obj_property name="label">Regfiles Data</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/rd_source">
+         <obj_property name="ElementShortName">rd_source[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_source[1:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/read_data">
+         <obj_property name="ElementShortName">read_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/pc_4">
+         <obj_property name="ElementShortName">pc_4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_4[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/alu_out_reg">
+         <obj_property name="ElementShortName">alu_out_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_out_reg[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/rd_data">
+         <obj_property name="ElementShortName">rd_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_data[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider164" type="divider">
+         <obj_property name="label">Memory</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/o_address">
+         <obj_property name="ElementShortName">o_address[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_address[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/o_mem_we">
+         <obj_property name="ElementShortName">o_mem_we[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_mem_we[3:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/rs2_data">
+         <obj_property name="ElementShortName">rs2_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2_data[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/write_data">
+         <obj_property name="ElementShortName">write_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iCPU/read_data">
+         <obj_property name="ElementShortName">read_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group98">
+      <obj_property name="label">BRAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="divider99" type="divider">
+         <obj_property name="label">BRAM Port A</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iMEM/addra">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">addra[11:0]</obj_property>
+         <obj_property name="ObjectShortName">addra[11:0]</obj_property>
+         <obj_property name="label">pc[13:2]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/inst">
+         <obj_property name="ElementShortName">inst[31:0]</obj_property>
+         <obj_property name="ObjectShortName">inst[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider99" type="divider">
+         <obj_property name="label">BRAM Port B</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/iMEM/addrb">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">addrb[11:0]</obj_property>
+         <obj_property name="ObjectShortName">addrb[11:0]</obj_property>
+         <obj_property name="label">addr_mem[13:2]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/read_data_mem">
+         <obj_property name="ElementShortName">read_data_mem[31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_mem[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <obj_property name="Reversed">false</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/we_mem">
+         <obj_property name="ElementShortName">we_mem[3:0]</obj_property>
+         <obj_property name="ObjectShortName">we_mem[3:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/write_data_mem">
+         <obj_property name="ElementShortName">write_data_mem[31:0]</obj_property>
+         <obj_property name="ObjectShortName">write_data_mem[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

@@ -72,6 +72,15 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="PHKRzqW3phNkt9tXAaB5-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="SLilasAyhPTZsPDB_32I-10" target="SLilasAyhPTZsPDB_32I-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="378" y="370" />
+              <mxPoint x="170" y="370" />
+              <mxPoint x="170" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="SLilasAyhPTZsPDB_32I-10" value="S_EXEI" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="360" y="280" width="120" height="80" as="geometry" />
         </mxCell>

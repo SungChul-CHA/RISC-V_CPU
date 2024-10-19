@@ -1,0 +1,9 @@
++====================+====================+=================================================+
+| Launch Setup Clock | Launch Hold Clock  | Pin                                             |
++====================+====================+=================================================+
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[1]/D |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | iCPU/fsm_inst/FSM_sequential_o_c_state_reg[0]/D |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | iCPU/pc_inst/pc_next_reg_reg[18]/D              |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | iCPU/pc_inst/pc_next_reg_reg[17]/D              |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | iCPU/pc_inst/pc_next_reg_reg[16]/D              |
++--------------------+--------------------+-------------------------------------------------+

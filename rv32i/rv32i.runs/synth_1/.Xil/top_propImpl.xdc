@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:/home/tony/Desktop/riscv/rv32i/rv32i.srcs/constrs_1/new/top.xdc rfile:../../../rv32i.srcs/constrs_1/new/top.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN K17 [get_ports clk_125mhz]
+set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y16 [get_ports btn]
+set_property src_info {type:XDC file:1 line:10 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN M14 [get_ports unknown_inst]

@@ -1,0 +1,23 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tony/Desktop/riscv/rv32i/rv32i.sim/sim_1/impl/func/xsim/tb_top_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module fsm
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module rv32i_cpu
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_generic_cstr
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_prim_width
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_prim_width__parameterized0
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_prim_width__parameterized1
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_prim_width__parameterized2
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_prim_wrapper_init
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_prim_wrapper_init__parameterized0
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_prim_wrapper_init__parameterized1
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_prim_wrapper_init__parameterized2
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_top
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_v8_4_5
+INFO: [VRFC 10-311] analyzing module tdpram_4096x32_blk_mem_gen_v8_4_5_synth
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tony/Desktop/riscv/rv32i/rv32i.srcs/sim_1/new/tb_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top

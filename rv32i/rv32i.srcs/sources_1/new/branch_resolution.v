@@ -24,18 +24,18 @@ module branch_resolution(
     input [2:0] funct3,
     input N, Z, C, V,
     
-    output reg is_branch
+    output reg is_btrue
     );
         
     always @ (*) begin
         case (funct3)
-            3'b000: is_branch = Z;             // BEQ
-            3'b001: is_branch = ~Z;            // BNE
-            3'b100: is_branch = (N != V);      // BLT
-            3'b101: is_branch = (N != V || Z); // BGE
-            3'b110: is_branch = ~C;            // BLTU
-            3'b111: is_branch = (C || Z);      // BGEU
-            default: is_branch = 1'b0;
+            3'b000: is_btrue = Z;             // BEQ
+            3'b001: is_btrue = ~Z;            // BNE
+            3'b100: is_btrue = (N != V);      // BLT
+            3'b101: is_btrue = (N != V || Z); // BGE
+            3'b110: is_btrue = ~C;            // BLTU
+            3'b111: is_btrue = (C || Z);      // BGEU
+            default: is_btrue = 1'b0;
         endcase
     end
     

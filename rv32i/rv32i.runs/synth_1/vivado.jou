@@ -2,12 +2,12 @@
 # Vivado v2022.2.2 (64-bit)
 # SW Build 3788238 on Tue Feb 21 19:59:23 MST 2023
 # IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-# Start of session at: Fri Oct 18 23:34:30 2024
-# Process ID: 80267
+# Start of session at: Sat Oct 19 17:29:32 2024
+# Process ID: 50363
 # Current directory: /home/tony/Desktop/riscv/rv32i/rv32i.runs/synth_1
-# Command line: vivado -log rv32i_cpu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rv32i_cpu.tcl
-# Log file: /home/tony/Desktop/riscv/rv32i/rv32i.runs/synth_1/rv32i_cpu.vds
+# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: /home/tony/Desktop/riscv/rv32i/rv32i.runs/synth_1/top.vds
 # Journal file: /home/tony/Desktop/riscv/rv32i/rv32i.runs/synth_1/vivado.jou
 # Running On: tony, OS: Linux, CPU Frequency: 2700.000 MHz, CPU Physical cores: 14, Host memory: 33431 MB
 #-----------------------------------------------------------
-source rv32i_cpu.tcl -notrace
+source top.tcl -notrace

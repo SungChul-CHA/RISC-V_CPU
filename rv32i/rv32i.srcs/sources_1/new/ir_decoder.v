@@ -50,7 +50,6 @@ module ir_decoder(
                 o_op_code    = i_inst[6:0];
                 o_rd         = i_inst[11:7];
                 o_imm[31:12] = i_inst[31:12];
-//                o_imm[11:0]  = 12'b0;
             end
             `JAL: begin
                 o_op_code    = i_inst[6:0];
@@ -59,8 +58,6 @@ module ir_decoder(
                 o_imm[11]    = i_inst[20];
                 o_imm[10:1]  = i_inst[30:21];
                 o_imm[20]    = i_inst[31];
-//                o_imm[0]     = 1'b0;
-//                o_imm[31:21] = {11{o_imm[20]}};
             end
             `JALR: begin
                 o_op_code    = i_inst[6:0];
@@ -68,7 +65,6 @@ module ir_decoder(
                 o_funct3     = i_inst[14:12];
                 o_rs1        = i_inst[19:15];
                 o_imm[11:0]  = i_inst[31:20];
-//                o_imm[31:12] = {20{o_imm[11]}};
             end
             `PC_TYPE: begin
                 case(i_inst[6:5])
@@ -81,8 +77,6 @@ module ir_decoder(
                         o_rs2        = i_inst[24:20];
                         o_imm[10:5]  = i_inst[30:25];
                         o_imm[12]    = i_inst[31];
-//                        o_imm[0]     = 1'b0;
-//                        o_imm[31:13] = {19{o_imm[12]}};
                     end
                     2'b00: begin     // Load
                         o_op_code    = i_inst[6:0];
@@ -90,7 +84,6 @@ module ir_decoder(
                         o_funct3     = i_inst[14:12];
                         o_rs1        = i_inst[19:15];
                         o_imm[11:0]  = i_inst[31:20];
-//                        o_imm[31:12] = 20'b0;
                     end
                     2'b01: begin    // Store
                         o_op_code    = i_inst[6:0];
@@ -99,7 +92,6 @@ module ir_decoder(
                         o_rs1        = i_inst[19:15];
                         o_rs2        = i_inst[24:20];
                         o_imm[11:5]  = i_inst[31:25];
-//                        o_imm[31:12] = 20'b0;
                     end
                     default: begin
                         o_op_code    = i_inst[6:0];
@@ -108,7 +100,6 @@ module ir_decoder(
                         o_rs1        = i_inst[19:15];
                         o_rs2        = i_inst[24:20];
                         o_imm[11:5]  = i_inst[31:25];
-//                        o_imm[31:12] = 20'b0;
                     end
                 endcase
             end
@@ -119,7 +110,6 @@ module ir_decoder(
                     o_funct3     = i_inst[14:12];
                     o_rs1        = i_inst[19:15];
                     o_imm[11:0]  = i_inst[31:20];
-//                    o_imm[31:12] = {20{o_imm[11]}};           
                 end
                 else begin  // R-type
                     o_op_code = i_inst[6:0];
@@ -136,7 +126,6 @@ module ir_decoder(
                 o_funct3    = i_inst[14:12];
                 o_rs1       = i_inst[19:15];
                 o_imm[11:0] = i_inst[31:20];
-//                o_imm[31:12] = {20{o_imm[11]}};
             end
         endcase
     end
